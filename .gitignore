@@ -1,1 +1,6 @@
 commands.txt
+
+/backend/node_modules
+
+# have to specify proper directory for folders
+/frontend/whatup
