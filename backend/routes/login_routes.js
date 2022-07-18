@@ -8,16 +8,14 @@ const jwt = require('jsonwebtoken')
 
 //get all logins
 router.get('/', async (req, res) =>{ // to access this '/api/login/', refer to server.js
-    //const workouts = await Workout.find({}).sort({createdAt:-1})
-
-    // const logins = await Login.find({}).sort({username:1})
-    // console.log('getall');
-    res.send('watup')
-    // res.status(200).json(logins)
+    const logins = await Login.find({}).sort({username:1})
+    console.log('get every logins');
+    //res.send('watup')
+    res.status(200).json(logins)
 });
 
 //register new login
-router.post('/register', async (req, res) => { // to access this '/api/logins/register'
+router.post('/', async (req, res) => { // to access this '/api/login/'
 	console.log(req.body)
 	try {
 		const newPassword = req.body.password//await bcrypt.hash(req.body.password, 10)
@@ -33,7 +31,7 @@ router.post('/register', async (req, res) => { // to access this '/api/logins/re
 });
 
 //check login
-router.post('/check', async (req, res) => { //'/api/logins/check'
+router.post('/check', async (req, res) => { //'/api/login/check'
 	const user = await Login.findOne({
 		email: req.body.email, 
 	})
@@ -67,8 +65,7 @@ router.post('/check', async (req, res) => { //'/api/logins/check'
 })
 
 //verify token
-//check login
-router.get('/verify-token', async (req, res) => { //'/api/logins/verify-token'
+router.get('/verify-token', async (req, res) => { //'/api/login/verify-token'
 	const token = req.headers['x-access-token']
 
 	try {
