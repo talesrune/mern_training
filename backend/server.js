@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const loginRoutes =require('./routes/login_routes')
+const bookRoutes = require('./routes/book_routes')
 
 //initalize express app
 const app = express()
@@ -19,7 +20,7 @@ mongoose.connect('mongodb://localhost:27017/bookstore')//, { useNewUrlParser: tr
 //   res.send('Hello W')
 // })
 app.use(bodyParser.json());//express.urlencoded({ extended: true })); //parse body
-//app.use('/api/workouts', workoutRoutes);
+app.use('/api/books', bookRoutes);
 
 app.use('/api/login', loginRoutes);
 
