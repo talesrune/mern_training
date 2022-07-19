@@ -29,7 +29,7 @@ input {
 label {
   font-size:18px;
   width: 120px;
-  display: inline-block;
+  display: inline-block; /*align textboxes by fixing label's width*/
 }
 
 .btn {
@@ -44,4 +44,43 @@ label {
   text-decoration: none;
   font-size: 18px;
   font-family: inherit;
+}
+
+.book-container {
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 20px solid rosybrown;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: lemonchiffon;
+}
+
+.book-details {
+  background: #7EC188;
+  color: #8004A7;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  position: relative; /*this is required for button to move to right*/
+}
+
+.book-details p{
+  font-size: 14px;
+}
+
+.book-details span {
+  position: absolute; /*parent position must be relative*/
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 25%;
+  color: #333;
 }
