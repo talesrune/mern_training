@@ -105,7 +105,7 @@ const Home = () => {
     
     <div className="book-container">
 
-      {showAddBook && <AddBook />}
+      {showAddBook && <AddBook email={email} updateBooks={getBooks}/>}
       <h2>{username}'s Book Store 
         <button onClick={toggleForm}> {(showAddBook)?'Close form':'Add new'}</button>
         <input type="button" className="btn2" value="Logout" onClick={userLogout}></input>
@@ -114,7 +114,7 @@ const Home = () => {
         
         <div className="books">
           {books && books.map((book)=>(
-            <div className='book-details' key={book.title}>
+            <div className='book-details' key={book._id}>
               <h3>{book.title}</h3>
               <p><strong>Genre:</strong> {book.genre}</p>
               <p><strong>Price:</strong> {book.price}</p>

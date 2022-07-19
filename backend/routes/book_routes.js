@@ -64,7 +64,8 @@ router.post('/', async (req, res) => { // to access this '/api/books/'
         res.status(200).json({status: 'ok', newbook:book})
 
     }catch(error){
-        res.status(400).json({status: 'error',error:error.message})
+        const sentence = error.message + ' Only proper genres are sol, horror, romance, action'
+        res.status(400).json({status: 'error',error:sentence})
     }
 });
 
