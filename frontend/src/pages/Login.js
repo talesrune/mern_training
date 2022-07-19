@@ -4,6 +4,7 @@ const Login = () => {
     <div className="container">
 
       <form>
+        <h2>Login</h2>
         <label for="email">Email:</label>
         <input type="text" id = "email" name="email" placeholder="Please enter your email"></input>
         <tr></tr>
