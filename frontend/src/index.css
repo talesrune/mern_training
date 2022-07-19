@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Verdana', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,110 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+input {
+  width: 38%;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size:18px;
+  width: 120px;
+  display: inline-block; /*align textboxes by fixing label's width*/
+}
+
+.btn {
+  display: inline-block;
+  background: #002;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.book-container {
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 20px solid rosybrown;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: lemonchiffon;
+}
+
+.book-details {
+  background: #7EC188;
+  color: #8004A7;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  position: relative; /*this is required for button to move to right*/
+}
+
+.book-details p{
+  font-size: 14px;
+}
+
+.book-details span{
+  position: absolute; /*parent position must be relative*/
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 25%;
+  color: #333;
+}
+
+.add-form {
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  background:  #7FB5B5;
+  padding: 6px;
+  color: #333;
+}
+
+h2 {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  border:none;
+  right: 20px;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #333;
+  
+  background: #edf;
+  width:15%;
+}
+
+button:hover{
+  background: #7EC188;
 }
