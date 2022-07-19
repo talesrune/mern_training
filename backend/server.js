@@ -1,13 +1,28 @@
 const express = require("express")
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser');
+const loginRoutes =require('./routes/login_routes')
+const bookRoutes = require('./routes/book_routes')
+
+//initalize express app
 const app = express()
 
-// app.use(()=>{ //use is get/put/post
-//     console.log("We got a request")
-// })
+mongoose.connect('mongodb://localhost:27017/bookstore')//, { useNewUrlParser: true, useUnifiedTopology: true }) //random is new database
+    .then(() => {
+        console.log("mongo connection success")
+    })
+    .catch(err => {
+        console.log("mongo connection error")
+        console.log(err)
+    })
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hello W')
+// })
+app.use(bodyParser.json());//express.urlencoded({ extended: true })); //parse body
+app.use('/api/books', bookRoutes);
+
+app.use('/api/login', loginRoutes);
 
 app.listen(4000,() =>{
     console.log("listening on port 4000")
