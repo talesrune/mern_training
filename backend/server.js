@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const loginRoutes =require('./routes/login_routes')
 const bookRoutes = require('./routes/book_routes')
 
+const cors = require('cors')
+
 //initalize express app
 const app = express()
 
@@ -19,6 +21,9 @@ mongoose.connect('mongodb://localhost:27017/bookstore')//, { useNewUrlParser: tr
 // app.get('/', (req, res) => {
 //   res.send('Hello W')
 // })
+
+app.use(cors())
+
 app.use(bodyParser.json());//express.urlencoded({ extended: true })); //parse body
 app.use('/api/books', bookRoutes);
 

@@ -11,7 +11,7 @@ router.get('/', async (req, res) =>{ // to access this '/api/login/', refer to s
     const logins = await Login.find({}).sort({username:1})
     console.log('get every logins');
     //res.send('watup')
-    res.status(200).json(logins)
+    res.status(200).json({ status: 'ok',logins})
 });
 
 //register new login
