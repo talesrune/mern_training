@@ -5,11 +5,12 @@ const Login = () => {
 
       <form>
         <h2>Login</h2>
-        <label for="email">Email:</label>
+        <label>Email:</label>
         <input type="text" id = "email" name="email" placeholder="Please enter your email"></input>
-        <tr></tr>
-        <label for="pwd">Password:</label>
+        <br></br>
+        <label>Password:</label>
         <input type="text" id = "pwd" name="pwd" placeholder="Please enter your password"></input>
+        <br></br>
         <input type="submit" className="btn" value="Login"></input>
       </form>
     </div>

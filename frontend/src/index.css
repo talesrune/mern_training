@@ -21,7 +21,7 @@ code {
 }
 
 input {
-  width: 50%;
+  width: 38%;
   border-radius: 2px;
   margin-bottom: 20px;
 }
@@ -74,7 +74,7 @@ label {
   font-size: 14px;
 }
 
-.book-details span {
+.book-details span{
   position: absolute; /*parent position must be relative*/
   bottom: 20px;
   right: 20px;
@@ -83,4 +83,35 @@ label {
   padding: 6px;
   border-radius: 25%;
   color: #333;
+}
+
+.add-form {
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  background:  #7FB5B5;
+  padding: 6px;
+  color: #333;
+}
+
+h2 {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  border:none;
+  right: 20px;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #333;
+  
+  background: #edf;
+  width:15%;
+}
+
+button:hover{
+  background: #7EC188;
 }

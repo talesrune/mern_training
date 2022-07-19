@@ -5,14 +5,15 @@ const Register = () => {
 
       <form>
         <h2>Register</h2>
-        <label for="username">Username:</label>
+        <label>Username:</label>
         <input type="text" id = "username" name="username" placeholder="Please enter new username"></input>
-        <tr></tr>
-        <label for="email">Email:</label>
+        <br></br>
+        <label>Email:</label>
         <input type="text" id = "email" name="email" placeholder="Please enter your email"></input>
-        <tr></tr>
-        <label for="pwd">Password:</label>
+        <br></br>
+        <label>Password:</label>
         <input type="text" id = "pwd" name="pwd" placeholder="Please enter new password"></input>
+        <br></br>
         <input type="submit" className="btn" value="Register"></input>
       </form>
     </div>
