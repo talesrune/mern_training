@@ -56,6 +56,20 @@ const Home = () => {
     
   }
 
+  const deleteBook = async(id) => {
+    axios({
+      method: 'delete', //you can set what request you want to be
+      url: 'http://localhost:4000/api/books/' + id
+    }).then(resp => {
+      if (resp.data) {
+        getBooks(email)
+      } 
+    }).catch(function (error) {
+      console.log(error);
+    });
+    
+  }
+
   const verify_token = async() => {
      axios({
       method: 'get', //you can set what request you want to be
@@ -119,7 +133,7 @@ const Home = () => {
               <p><strong>Genre:</strong> {book.genre}</p>
               <p><strong>Price:</strong> {book.price}</p>
               <p>{book.createdAt}</p>
-              <span onClick={null}>delete</span>
+              <span onClick={()=> deleteBook(book._id)}>delete</span>
             </div>
           ))}
         
