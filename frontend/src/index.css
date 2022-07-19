@@ -112,6 +112,22 @@ button {
   width:15%;
 }
 
+.btn2 {
+  position: absolute;
+  right: 20%;
+  display: inline-block;
+  background: #002;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  width: 25%;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: inherit;
+}
+
 button:hover{
   background: #7EC188;
 }

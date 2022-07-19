@@ -3,10 +3,6 @@ const router = express.Router();
 const Book = require('../models/bookModel')
 const mongoose = require('mongoose'); //it is requrired for validate id
 
-//get workouts by email
-//router.get('/email/:email', getAllWorkoutsEmail);
-
-//////////////////////////////////////////
 //get all books
 router.get('/', async (req, res) =>{ // to access this '/api/books/
     const books = await Book.find({}).sort({username:1})
@@ -14,6 +10,14 @@ router.get('/', async (req, res) =>{ // to access this '/api/books/
     //res.send('watup')
     res.status(200).json(books)
 });
+
+//verify token
+router.get('/email', async (req, res) => { //'/api/login/verify-token'
+	const email = req.headers['email']
+  console.log('get book by email')
+	const books = await Book.find({email:email}).sort({username:1})
+  res.status(200).json(books)
+})
 
 //get single book using id
 router.get('/:id', async (req, res) =>{ // to access this '/api/books/:id
